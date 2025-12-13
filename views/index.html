@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>College Newsletter - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  /* === Navbar dropdowns === */
+.navbar-custom {
+  background-color: #0d1b2a;
+}
+
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: #f0f0f0;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .navbar-brand:hover {
+  color: #ffcc00;
+}
+
+.navbar-custom .dropdown-menu {
+  background-color: #0d1b2a;
+  border: none;
+  border-radius: 6px;
+  margin-top: 0.25rem;
+  left: 0;          /* align with parent */
+  right: auto;      /* prevent floating */
+  top: 100%;        /* below parent */
+  min-width: 220px; /* consistent width */
+}
+
+.navbar-custom .dropdown-item {
+  color: #f0f0f0;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  margin: 2px 4px;
+}
+
+.navbar-custom .dropdown-item:hover {
+  background-color: rgba(255, 204, 0, 0.2);
+  color: #ffcc00;
+  transform: scale(1.03);
+}
+
+/* Ensure dropdown positions relative to parent */
+.navbar-custom .nav-item.dropdown {
+  position: relative;
+}
+#studentsDropdown + .dropdown-menu {
+  left: -100px;   /* move 20px to the left */
+  right: auto;
+}
+
+/* Open dropdown on hover for desktop */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0; /* prevent small gap */
+  }
+}
+
+/* ================= Combined style.css contents ================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding-top: 76px; /* navbar height */
+  background: #f5f6f8; /* normal light background */
+}
+
+
+
+h1 {
+  text-align: center;
+  color: #0d1b2a; /* navy */
+}
+section {
+  margin: 20px 0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+article {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+img {
+  margin: 10px 5px;
+  border-radius: 5px;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar-custom {
+  background: #0d1b2a; /* rich dark navy */
+}
+
+/* Brand */
+.navbar-custom .navbar-brand {
+  color: #ffcc00; /* golden yellow */
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+.navbar-custom .navbar-brand:hover {
+  color: #ffd54f; /* softer yellow */
+}
+
+/* Links */
+.navbar-custom .nav-link {
+  color: #f0f0f0 !important;
+  margin-left: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.navbar-custom .nav-link:hover {
+  background-color: rgba(255, 204, 0, 0.2); /* soft yellow overlay */
+  color: #ffcc00 !important;
+  transform: scale(1.05);
+}
+
+/* Active link */
+.navbar-custom .nav-link.active {
+  background-color: #ffcc00;
+  color: #0d1b2a !important;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.navbar-custom .navbar-brand img {
+  background: transparent;
+  height: 60px;
+  width: auto;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero-section {
+  background: 
+    linear-gradient(rgba(10, 20, 40, 0.7), rgba(10, 20, 40, 0.7)), 
+    url("../public/images/home/bgimg.jpg") no-repeat center center/cover;
+  padding: 140px 20px 120px;
+  text-align: center;
+  color: white;
+  margin-top: -76px; /* pulls hero under navbar */
+}
+
+
+.hero-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.hero-quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #ffffff;
+  margin: 20px auto;
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-message {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  max-width: 850px;
+  margin: 20px auto 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-message .highlight {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.divider {
+  margin: 30px auto 0;
+  width: 140px;
+  height: 5px;
+  background: linear-gradient(90deg, #ffcc00, #ffffff);
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+/* Hover Effects */
+.hero-section:hover .hero-heading {
+  color: #ffffff;
+  text-shadow: 
+    -1px -1px 2px #000, 
+    1px -1px 2px #000, 
+    -1px 1px 2px #000, 
+    1px 1px 2px #000,
+    0 0 12px #ffcc00;
+}
+
+.hero-section:hover .divider {
+  background: linear-gradient(90deg, #ffffff, #ffcc00);
+}
+
+
+
+/* ---------------- HOD SIGNATURE ---------------- */
+.hod-signature {
+  margin-top: 25px;
+  text-align: right;
+  font-style: italic;
+  font-weight: 600;
+  color: #000000; /* solid black */
+}
+
+
+/* ---------------- HOD MESSAGE SECTION ---------------- */
+.hod-message {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  line-height: 1.8;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid #ffcc00;
+}
+
+.hod-message:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+
+.hod-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0d1b2a; /* navy */
+  border-bottom: 3px solid #ffcc00; /* yellow underline */
+  display: inline-block;
+  padding-bottom: 8px;
+  margin: 0 auto 20px;
+}
+
+.hod-text {
+  font-size: 1rem;
+  text-align: justify;
+  color: #444;
+}
+
+.hod-text b {
+  color: #0d1b2a; /* navy bolds */
+}
+
+.hod-signature {
+  margin-top: 25px;
+  text-align: right;
+  font-style: italic;
+  font-weight: 600;
+  color: #000; /* yellow signature */
+}
+/* ===== Team & Department Sections ===== */
+
+/* Section Headings */
+section h3 {
+  color: #0d1b2a; /* navy */
+  border-bottom: 2px solid #ffcc00; /* yellow underline */
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+section h5 {
+  color: #0d1b2a;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+/* Advisor / Editorial / Student Names */
+section p.fw-bold {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #0d1b2a; /* navy for names */
+}
+
+section p.text-muted {
+  font-size: 0.9rem;
+  color: #555 !important;
+}
+
+/* Profile Images */
+section img.rounded-circle {
+  border: 3px solid #ffcc00; /* golden border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section img.rounded-circle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* About Department box */
+section.container.my-5:last-of-type {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-left: 6px solid #ffcc00; /* yellow accent */
+}
+
+/* List Styling */
+section ul {
+  padding-left: 20px;
+}
+
+section ul li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+h6.fw-bold {
+  color: #0d1b2a; /* navy text */
+  background: #ffcc00; /* yellow background */
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* -------- Workshops Page -------- */
+.workshop-date-heading {
+  border-left: 6px solid #0d6efd;
+  padding-left: 12px;
+  font-weight: 700;
+}
+
+.workshop-card {
+  border: 1px solid #e5e7eb;
+}
+
+.workshop-card__header {
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.workshop-chip {
+  background: #e8f0ff;
+  color: #0d1b2a;
+  font-weight: 600;
+}
+
+.workshop-date-chip {
+  background: #0d1b2a;
+  color: #ffcc00;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.workshop-meta-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.meta-block {
+  background: linear-gradient(90deg, #f8fafc 0%, #eef4ff 100%);
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #dfe6f3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.meta-label {
+  font-weight: 800;
+  color: #0d1b2a;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.meta-item,
+.meta-value {
+  color: #2f3b52;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.workshop-summary {
+  background: #fff9e6;
+  border: 1px solid #ffe08a;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #2f3b52;
+}
+
+.workshop-gallery {
+  border-top: 1px dashed #e5e7eb;
+}
+
+.workshop-gallery__item {
+  flex: 1 1 220px;
+  max-width: 240px;
+}
+
+.workshop-gallery__item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+.workshop-gallery__item.placeholder img {
+  object-fit: contain;
+}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container-fluid" style="margin-top: -1px;">
+    <a class="navbar-brand fw-bold" href="/">NWC Newsletter</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Research -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="researchDropdown" role="button"
+             aria-expanded="false">
+            Research
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="researchDropdown">
+            <li><a class="dropdown-item" href="/research-articles">Research Articles</a></li>
+            <li><a class="dropdown-item" href="/research-orations">Research Oration</a></li>
+            <li><a class="dropdown-item" href="/research">Funded Research Projects</a></li>
+          </ul>
+        </li>
+
+        <!-- Faculty -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown" role="button"
+             aria-expanded="false">
+            Faculty
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="facultyDropdown">
+            <li><a class="dropdown-item" href="/FacultyArticle">FacultyArticle</a></li>
+            <li><a class="dropdown-item" href="/phdscholars">Ph.D.  Powerhouse</a></li>
+            <li><a class="dropdown-item" href="/facultyOnBoard">New On Board</a></li>
+            <li><a class="dropdown-item" href="/facultyUpskilling">Faculty Upskilling</a></li>
+            <li><a class="dropdown-item" href="/faculty-achievements">Faculty Achievements</a></li>
+            <li><a class="dropdown-item" href="/consultancy">Faculty Consultancy</a></li>
+            <li><a class="dropdown-item" href="/visitors">Visitors</a></li>
+          </ul>
+        </li>
+
+        <!-- Events -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button"
+              aria-expanded="false">
+            Events
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="/GuestLecture">Guest Lecture</a></li>
+            <li><a class="dropdown-item" href="/Workshop">Workshop</a></li>
+            <li><a class="dropdown-item" href="/AlumniActivities">Alumni Activities</a></li>
+            <li><a class="dropdown-item" href="/OutreachActivities">Outreach Activities</a></li>
+          </ul>
+        </li>
+
+        <!-- Students -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button"
+              aria-expanded="false">
+            Students
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="studentsDropdown">
+            <li><a class="dropdown-item" href="/students/placement-highlights">Placements</a></li>
+            <li><a class="dropdown-item" href="/students/achievements">Student's Achievements</a></li>
+            <li><a class="dropdown-item" href="/students/activities">Student's Activities</a></li>
+            <li><a class="dropdown-item" href="/students/articles">Student's Articles</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <h1 class="hero-heading">Welcome to NWC Department</h1>
+  <p class="hero-quote">"Shaping Knowledge, Inspiring Minds, Creating Change"</p>
+  <p class="hero-message">
+    Together we strive for <span class="highlight">excellence</span> in academics,
+    research, and innovation.
+  </p>
+  <div class="divider"></div>
+</section>
+
+<!-- MESSAGE FROM THE HOD -->
+<section class="hod-message">
+  <h2 class="hod-title">Message from the Head of Department</h2>
+  <p class="hod-text">
+    Dear Students and Esteemed Colleagues,<br><br>
+    My Hearty Wishes to you all !!<br><br>
+    It gives me immense pleasure to unveil this edition of our department newsletter. Each page in it 
+    reflects the energy, creativity, and achievements of our vibrant student and faculty community. Over 
+    the past months, our department has witnessed remarkable academic accomplishments, inspiring 
+    events, and initiatives that showcase the true spirit of learning and leadership<br><br>
+
+    This newsletter is a celebration of our shared journey. In the past quarterly, our faculty excelled 
+    in Journal publications and Patent publications. Our department is consistently maintaining good 
+    placements with our students getting recruitment in esteemed companies like <b>Morgan Stanley, BNY 
+    Mellon, SAP Labs, MUFG Global Services and Oracle</b>.<br><br>
+
+    I extend my heartfelt appreciation to all contributors, faculty members, and students whose 
+    enthusiasm has helped in highlighting the reputation of the department. Their dedication reminds us 
+    that growth happens when we work together and support one another.<br><br>
+
+    As you read through this edition, I hope you feel the same pride and motivation that guided us in 
+    creating it. May this newsletter inspire you to explore new ideas, participate actively, and continue 
+    making meaningful contributions to our college community.<br><br>
+
+  </p>
+
+  <div class="hod-signature">
+    <p><b>Dr. M. Lakshmi</b></p>
+    <p>Professor & Head,<br>Department of Networking and Communications,<br>
+    SRM Institute of Science and Technology</p>
+  </div>
+</section>
+
+  <!-- EDITORIAL TEAM & STUDENT TEAM -->
+<section class="container my-5 text-center">
+  <h3 class="fw-bold">Advisor</h3>
+  <div class="mb-4">
+    <img src="../public/images/home/advisor.jpg" alt="Advisor" class="rounded-circle mb-2" width="150" height="150">
+    <p class="fw-bold">Dr. M. Lakshmi</p>
+    <p class="text-muted">Professor & Head, NWC, SRMIST</p>
+  </div>
+
+  <h3 class="fw-bold">Editorial Team</h3>
+  <div class="row mt-3">
+    <div class="col-md-4 mb-3">
+      <img src="../public/images/home/editor1.jpg" class="rounded-circle mb-2" width="120" height="120">
+      <p class="fw-bold">Dr. V.M. Gayathri</p>
+      <p class="text-muted">Associate Professor, NWC, SRMIST</p>
+    </div>
+    <div class="col-md-4 mb-3">
+      <img src="../public/images/home/editor2.jpg" class="rounded-circle mb-2" width="120" height="120">
+      <p class="fw-bold">Dr. V. Vijayalakshmi</p>
+      <p class="text-muted">Assistant Professor, NWC, SRMIST</p>
+    </div>
+    <div class="col-md-4 mb-3">
+      <img src="../public/images/home/editor3.jpg" class="rounded-circle mb-2" width="120" height="120">
+      <p class="fw-bold">Dr. C. Fancy</p>
+      <p class="text-muted">Assistant Professor, NWC, SRMIST</p>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-4 mb-3">
+      <img src="../public/images/home/editor4.jpg" class="rounded-circle mb-2" width="120" height="120">
+      <p class="fw-bold">Dr. M. Sundarrajan</p>
+      <p class="text-muted">Assistant Professor, NWC, SRMIST</p>
+    </div>
+    <div class="col-md-4 mb-3">
+      <img src="../public/images/home/editor5.jpg" class="rounded-circle mb-2" width="120" height="120">
+      <p class="fw-bold">Dr. D. Saisanthiya</p>
+      <p class="text-muted">Assistant Professor, NWC, SRMIST</p>
+    </div>
+    <div class="col-md-4 mb-3">
+      <img src="../public/images/home/editor6.jpg" class="rounded-circle mb-2" width="120" height="120">
+      <p class="fw-bold">Dr. G. Abinaya</p>
+      <p class="text-muted">Assistant Professor, NWC, SRMIST</p>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-6 mb-3">
+      <img src="../public/images/home/editor7.jpg" class="rounded-circle mb-2" width="120" height="120">
+      <p class="fw-bold">Dr. Justina Michael J</p>
+      <p class="text-muted">Teaching Associate, NWC, SRMIST</p>
+    </div>
+    <div class="col-md-6 mb-3">
+      <img src="../public/images/home/editor8.jpg" class="rounded-circle mb-2" width="120" height="120">
+      <p class="fw-bold">Mr. N. Murugan</p>
+      <p class="text-muted">Programmer, NWC, SRMIST</p>
+    </div>
+  </div>
+
+  <h3 class="fw-bold mt-5">Student Team</h3>
+  <div class="row mt-3">
+    <div class="col-md-3 mb-3">
+      <img src="../public/images/home/student1.jpg" class="rounded-circle mb-2" width="100" height="100">
+      <p class="fw-bold">Pallavi</p>
+      <p class="text-muted">RA2411031010015<br>CSE-IT / W2 / NWC</p>
+    </div>
+    <div class="col-md-3 mb-3">
+      <img src="../public/images/home/student2.jpg" class="rounded-circle mb-2" width="100" height="100">
+      <p class="fw-bold">Shivam Chitlangia</p>
+      <p class="text-muted">RA2411031010051<br>CSE-IT / W2 / NWC</p>
+    </div>
+    <div class="col-md-3 mb-3">
+      <img src="../public/images/home/student3.jpg" class="rounded-circle mb-2" width="100" height="100">
+      <p class="fw-bold">B. Sai Abhijeet</p>
+      <p class="text-muted">RA2411031010045<br>CSE-IT / W2 / NWC</p>
+    </div>
+    <div class="col-md-3 mb-3">
+      <img src="../public/images/home/student4.jpg" class="rounded-circle mb-2" width="100" height="100">
+      <p class="fw-bold">Abhinav Shankar</p>
+      <p class="text-muted">RA2411031010042<br>CSE-IT / W2 / NWC</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT THE DEPARTMENT -->
+<section class="container my-5">
+  <h3 class="fw-bold">About the Department</h3>
+  <p>
+    Department of Networking and Communications under School of Computing intend to meet the 
+  expectations of the aspiring students and to add more value to the degrees offered. The Department 
+  ensures to provide quality and value-laden education for students in the traditional and contemporary 
+  areas of Cloud Computing, Computer Networks, Cyber Security, Information Technology, Internet of 
+  Things and DevSecOps.
+  </p>
+  <p>
+    The programs are introduced in partnership with reputed IT companies like Amazon Web services, 
+    K7 Security, Virtusa etc. The department consists of a medley of faculty members with industrial 
+    and academic experience. The Department’s keen focus is towards “networks”domain specific and 
+    specialization-based placement drives for its students. The department inculcates entrepreneurial 
+    skills in budding aspirants to pitch their innovative ideas through SRM Innovation and Incubation 
+    Center. Our International and alumni connect intrigue in bridging the gap between the trio: 
+    Academics-Industry -Research.
+  </p>
+
+  <h5 class="fw-bold mt-4">Vision</h5>
+  <p>
+    To Nurture as globally recognisable department in imparting the students high quality education and 
+    providing high confidence, unique knowledge and research experience in the field of networking, 
+    cyber security, forensics, information technology, cognitive computing and internet of things.
+</p>
+
+  <h5 class="fw-bold mt-4">Mission</h5>
+  <ul>
+    <li>To provide world-class IT professionals with appropriate industry and research-based curriculum.</li>
+    <li>To train the students that leads to entrepreneurship and societal need-based industries.</li>
+    <li> To nourish the students as socially responsible professionals by providing them training in personality 
+          evelopment, ethics, and leadership program.</li>
+  </ul>
+
+  <h5 class="fw-bold mt-4">Under Graduate Programs</h5>
+  <ul>
+    <li>B.Tech. CSE with Specialization in Cloud Computing</li>
+    <li>B.Tech. CSE with Specialization in Computer Networking</li>
+    <li>B.Tech. CSE with Specialization in Cyber Security</li>
+    <li>B.Tech. CSE with Specialization in DevSecOps</li>
+    <li>B.Tech. CSE with Specialization in IT</li>
+    <li>B.Tech. CSE with Specialization in IoT</li>
+  </ul>
+
+  <h5 class="fw-bold mt-4">Post Graduate Programs</h5>
+  <ul>
+    <li>M.Tech. Cloud Computing</li>
+    <li>M.Tech. Cyber Security</li>
+    <li>M.Tech. Forensics</li>
+    <li>M.Tech. Internet of Things</li>
+    <li>Ph.D. in Computer Science & Engineering</li>
+  </ul>
+  <h5 class="fw-bold mt-4"> Collaboration with Great Learning </h5>
+  <ul>
+    <li>M.Tech. Cloud Computing and Block Chain</li>
+    <li>M.Tech. Cyber Security</li>
+  </ul>
+  <h5 class="fw-bold mt-4"> Research</h5>
+  <ul>
+    <li> PhD in Computer Science and Engineering</li>
+  </ul>
+  <h5 class="fw-bold mt-4"> Minor Degree Programme </h5>
+  <ul>
+    <li>Minor in Cyber Security</li>
+    <li>Minor in Imaging Sciences and Machine Vision</li>
+    <li>Minor in Internet of Things</li></li>
+  </ul>
+</section>
+
+<footer class="text-center py-4" style="background:#0d1b2a;color:#fff;">
+  <div class="container">
+    <p class="mb-1">&copy; NWC Department - College Newsletter</p>
+    <p class="mb-0">Contact: nwc@example.edu</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
