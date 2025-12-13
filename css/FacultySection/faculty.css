@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+
+}
+
+.main-title {
+  color: #1e40af;
+  font-size: 1.4rem;
+}
+
+.page-title {
+  font-size: 2.4rem;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+.category-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.category,
+.single {
+  background: #ffe600;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.single {
+  margin-top: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.profile {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.profile img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px dashed #38bdf8;
+}
+
+.profile h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.profile p {
+  margin: 2px 0;
+  font-size: 0.85rem;
+}
+
+.profile span {
+  color: #dc2626;
+  font-size: 0.85rem;
+}
+
+.isea-title {
+  margin-top: 50px;
+  background: #ffe600;
+  padding: 14px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+p {
+  text-align: justify;
+}

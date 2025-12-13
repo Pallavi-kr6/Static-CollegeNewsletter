@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f6fbff, #eef6ff);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px 60px;
+}
+
+/* HEADINGS */
+.subtitle {
+  color: #2c3e99;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.title {
+  color: #243a8f;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+/* CARDS */
+.card {
+  border-radius: 18px;
+  padding: 22px 26px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.peach { background: #ffd6cc; }
+.yellow { background: #fff0c4; }
+.green { background: #dff2d8; }
+.teal  { background: #d6f0ea; }
+.blue  { background: #d9efff; }
+
+/* TEXT */
+.name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #c62828;
+  margin-bottom: 8px;
+}
+
+.name span {
+  display: inline;
+}
+
+.reg {
+  font-weight: 600;
+  color: #444;
+}
+
+.desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #222;
+  text-align: justify;
+}
+
+.desc strong {
+  font-weight: 700;
+}
+
+/* FOOTER */
+.congrats {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #9c6b2f;
+}
