@@ -4,9 +4,139 @@
   <meta charset="UTF-8">
   <title>Consultancy Work</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+   
 </head>
 <style>
+  * {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, #f8fafc, #eef2ff);
+}
+
+/* Page container */
+.page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Headings */
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.section-title {
+  margin-top: 40px;
+  text-align: center;
+  color: #0f172a;
+}
+
+/* Info box */
+.info-box {
+  background: #e0f2fe;
+  border-left: 6px solid #0284c7;
+  padding: 18px;
+  margin: 30px auto;
+  max-width: 700px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  padding: 25px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.15);
+}
+
+/* Images */
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;      /* 🔑 prevents cutting */
+  object-position: center;
+  border-radius: 50%;
+  border: 4px solid #2563eb;
+  margin-bottom: 15px;
+  background-color: #f1f5f9; /* fills empty space if image is small */
+  padding: 6px;              /* breathing room */
+}
+
+/* Text inside card */
+.card h3 {
+  margin: 8px 0 4px;
+  font-size: 1.05rem;
+  color: #111827;
+}
+
+.card span {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+/* Paragraphs */
+.text {
+  max-width: 900px;
+  margin: 20px auto;
+  line-height: 1.8;
+  color: #334155;
+  text-align: justify;
+}
+
+/* Highlight */
+.highlight {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #166534;
+  font-weight: bold;
+}
+
+/* Welcome text */
+.welcome {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #7c3aed;
+}
+p {
+  text-align: justify;
+}
+
     /* === Navbar dropdowns (UNCHANGED) === */
     .navbar-custom {
       background-color: #0d1b2a;
@@ -83,9 +213,9 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="researchDropdown">Research</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/research-articles">Research Articles</a></li>
-            <li><a class="dropdown-item" href="/research-orations">Research Oration</a></li>
-            <li><a class="dropdown-item" href="/research">Funded Research Projects</a></li>
+            <li><a class="dropdown-item" href="/views/research/articles.html">Research Articles</a></li>
+            <li><a class="dropdown-item" href="/views/research/researchOration.html">Research Oration</a></li>
+            <li><a class="dropdown-item" href="/views/research/fundedprojects.html">Funded Research Projects</a></li>
           </ul>
         </li>
 
@@ -93,13 +223,13 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown">Faculty</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/FacultyArticle">FacultyArticle</a></li>
-            <li><a class="dropdown-item" href="/phdscholars">Ph.D. Powerhouse</a></li>
-            <li><a class="dropdown-item" href="/facultyOnBoard">New On Board</a></li>
-            <li><a class="dropdown-item" href="/facultyUpskilling">Faculty Upskilling</a></li>
-            <li><a class="dropdown-item" href="/faculty-achievements">Faculty Achievements</a></li>
-            <li><a class="dropdown-item" href="/consultancy">Faculty Consultancy</a></li>
-            <li><a class="dropdown-item" href="/visitors">Visitors</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/Article.html">FacultyArticle</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/pdhPowerhouse.html">Ph.D. Powerhouse</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyOnBoard.html">New On Board</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/upskilling.html">Faculty Upskilling</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyAchievement.html">Faculty Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/Consultancy.html">Faculty Consultancy</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/visitors.html">Visitors</a></li>
           </ul>
         </li>
 
@@ -118,10 +248,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown">Students</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/students/placement-highlights">Placements</a></li>
-            <li><a class="dropdown-item" href="/students/achievements">Student's Achievements</a></li>
-            <li><a class="dropdown-item" href="/students/activities">Student's Activities</a></li>
-            <li><a class="dropdown-item" href="/students/articles">Student's Articles</a></li>
+            <li><a class="dropdown-item" href="/views/students/placements.html">Placements</a></li>
+            <li><a class="dropdown-item" href="/views/students/achievements.html">Student's Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/students/activities.html">Student's Activities</a></li>
+            <li><a class="dropdown-item" href="/views/students/articles.html">Student's Articles</a></li>
           </ul>
         </li>
 
@@ -148,12 +278,12 @@ while offering faculty valuable opportunities to translate their expertise into 
 
 <h2 class="section-title">Team Members</h2>
 <div class="grid">
-  <div class="card"><img src="images/godwin.jpg"><h3>Dr. J. Godwin Ponsam</h3><span>Associate Professor,NWC, SRMIST</span></div>
-  <div class="card"><img src="images/geetha.jpg"><h3>Dr. G. Geetha</h3><span>Assistant Professor,NWC, SRMIST</span></div>
-  <div class="card"><img src="images/nimala.jpg"><h3>Dr. K. Nimala</h3><span>Associate Professor,NWC, SRMIST</span></div>
-  <div class="card"><img src="images/saveetha.jpg"><h3>Dr. D. Saveetha</h3><span>Assistant Professor,NWC, SRMIST</span></div>
-  <div class="card"><img src="images/elizabeth.jpg"><h3>Dr. V. Elizabeth Jesi</h3><span>Associate Professor,NWC, SRMIST</span></div>
-  <div class="card"><img src="images/visalakshi.jpg"><h3>Dr. P. Visalakshi</h3><span>Associate Professor,NWC, SRMIST</span></div>
+  <div class="card"><img src="/Images/FacultySection/DrJGodwin.jpg"><h3>Dr. J. Godwin Ponsam</h3><span>Associate Professor,NWC, SRMIST</span></div>
+  <div class="card"><img src="/Images/FacultySection/DrGGeetha.jpg"><h3>Dr. G. Geetha</h3><span>Assistant Professor,NWC, SRMIST</span></div>
+  <div class="card"><img src="/Images/FacultySection/DrKNimla.jpg"><h3>Dr. K. Nimala</h3><span>Associate Professor,NWC, SRMIST</span></div>
+  <div class="card"><img src="/Images/FacultySection/DrD.jpg"><h3>Dr. D. Saveetha</h3><span>Assistant Professor,NWC, SRMIST</span></div>
+  <div class="card"><img src="/Images/FacultySection/DrElizabeth.jpg"><h3>Dr. V. Elizabeth Jesi</h3><span>Associate Professor,NWC, SRMIST</span></div>
+  <div class="card"><img src="/Images/FacultySection/Drp.jpg"><h3>Dr. P. Visalakshi</h3><span>Associate Professor,NWC, SRMIST</span></div>
 </div>
 
 <h2 class="section-title">About the Consultancy Work</h2>

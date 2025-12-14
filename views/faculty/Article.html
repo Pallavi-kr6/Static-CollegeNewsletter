@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Faculty Articles</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f9f6ef;
+      color: #222;
+      margin-top: 70px; /* prevent navbar overlap */
+    }
+
+    /* Page Container */
+    .page-wrapper {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px 60px;
+    }
+
+    /* Header Bar */
+    .page-title {
+      background: #00a9e0;
+      color: #fff;
+      text-align: center;
+      padding: 14px;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Article Title */
+    .article-title {
+      margin: 30px 0 25px;
+      color: #0b6b3a;
+      font-size: 26px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* Author Card */
+    .author-card {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .author-image {
+      display: inline-block;
+      border: 2px dashed #00a9e0;
+      border-radius: 18px;
+      padding: 10px;
+    }
+
+    .author-image img {
+      width: 180px;
+      height: auto;
+      border-radius: 14px;
+      object-fit: cover;
+    }
+
+    .author-name {
+      margin: 15px 0 5px;
+      color: #d32f2f;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .author-designation {
+      margin: 0;
+      color: #d32f2f;
+      font-size: 15px;
+    }
+
+    /* Article Content */
+    .article-content {
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .article-content p {
+      margin-bottom: 14px;
+    }
+
+    .article-content ol {
+      margin: 15px 0 20px 25px;
+    }
+
+    .article-content h2 {
+      margin-top: 25px;
+      font-size: 20px;
+      color: #111;
+    }
+
+   .navbar-custom {
+      background-color: #0d1b2a;
+    }
+
+    .navbar-custom .nav-link,
+    .navbar-custom .navbar-brand {
+      color: #f0f0f0;
+    }
+
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .navbar-brand:hover {
+      color: #ffcc00;
+    }
+
+    .navbar-custom .dropdown-menu {
+      background-color: #0d1b2a;
+      border: none;
+      border-radius: 6px;
+      margin-top: 0.25rem;
+      left: 0;
+      right: auto;
+      top: 100%;
+      min-width: 220px;
+    }
+
+    .navbar-custom .dropdown-item {
+      color: #f0f0f0;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      margin: 2px 4px;
+    }
+
+    .navbar-custom .dropdown-item:hover {
+      background-color: rgba(255, 204, 0, 0.2);
+      color: #ffcc00;
+      transform: scale(1.03);
+    }
+
+    .navbar-custom .nav-item.dropdown {
+      position: relative;
+    }
+
+    #studentsDropdown + .dropdown-menu {
+      left: -100px;
+      right: auto;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    /* Prevent content hiding under navbar */
+    body {
+      margin-top: 70px;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .article-title {
+        font-size: 22px;
+      }
+
+      .author-image img {
+        width: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="/">NWC Newsletter</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Research -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="researchDropdown">Research</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/research/articles.html">Research Articles</a></li>
+            <li><a class="dropdown-item" href="/views/research/researchOration.html">Research Oration</a></li>
+            <li><a class="dropdown-item" href="/views/research/fundedprojects.html">Funded Research Projects</a></li>
+          </ul>
+        </li>
+
+        <!-- Faculty -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown">Faculty</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/faculty/Article.html">FacultyArticle</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/pdhPowerhouse.html">Ph.D. Powerhouse</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyOnBoard.html">New On Board</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/upskilling.html">Faculty Upskilling</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyAchievement.html">Faculty Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/Consultancy.html">Faculty Consultancy</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/visitors.html">Visitors</a></li>
+          </ul>
+        </li>
+
+        <!-- Events -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown">Events</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/GuestLecture">Guest Lecture</a></li>
+            <li><a class="dropdown-item" href="/Workshop">Workshop</a></li>
+            <li><a class="dropdown-item" href="/AlumniActivities">Alumni Activities</a></li>
+            <li><a class="dropdown-item" href="/OutreachActivities">Outreach Activities</a></li>
+          </ul>
+        </li>
+
+        <!-- Students -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown">Students</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/students/placements.html">Placements</a></li>
+            <li><a class="dropdown-item" href="/views/students/achievements.html">Student's Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/students/activities.html">Student's Activities</a></li>
+            <li><a class="dropdown-item" href="/views/students/articles.html">Student's Articles</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="page-wrapper">
+
+  <div class="page-title">Faculty Articles</div>
+
+  <h1 class="article-title">
+    Next-Gen Enterprise Networking Revolution: Cloud Management,
+    SD-WAN Flexibility, and Intent-Based Intelligence
+  </h1>
+
+  <div class="author-card">
+    <div class="author-image">
+      <img src="/Images/FacultySection/DrDeepa.jpg" alt="Dr. Deepa Thilak K">
+    </div>
+    <h3 class="author-name">Dr. Deepa Thilak K</h3>
+    <p class="author-designation">Associate Professor, NWC, SRMIST.</p>
+  </div>
+
+  <div class="article-content">
+    <p>
+      Cloud-managed enterprise management with SD-WAN and
+      intent-based networking (IBN) is a modern approach to
+      network administration that simplifies and automates
+      the process of managing a wide area network (WAN).
+    </p>
+
+    <p>
+      It combines three key concepts to create a more agile,
+      secure, and efficient network.
+    </p>
+
+    <ol>
+      <li>Cloud – Managed Networks</li>
+      <li>Intent – based Networking</li>
+      <li>SD – WAN</li>
+    </ol>
+
+    <h2>1. Cloud-Managed Networks</h2>
+
+    <p>
+      Cloud-managed enterprise networks represent a significant shift from traditional on-premises 
+network management to an architecture leveraging cloud-hosted management and control services. 
+In this model, network devices such as routers, switches, and wireless access points are centrally 
+configured and managed through cloud-based platforms. 
+Key drivers for cloud-managed networking include the agility to quickly roll out updates and new 
+features, scalability to support growing and geographically dispersed networks. Administrators gain 
+real-time insights through cloud dashboards and analytics, enabling efficient traffic analysis, device 
+and user activity monitoring, and centralized alerting capabilities. This architectural paradigm 
+reduces the need for extensive on-site network management hardware, permits remote operation, 
+and aligns with IT priorities shifting towards strategic initiatives over routine maintenance.
+    </p>
+    <br>
+    <img src="/Images/FacultySection/DrDeepaimg.jpg" alt="Cloud-Managed Networks" style="width:50%; margin: 20px 0; border-radius: 8px;">
+    <br>
+    <h2>2.Software-Defined Wide 
+Area Networking (SD-WAN)</h2>
+<br>
+<p>
+  SD-WAN is a foundational 
+technology for modern 
+enterprise WANs that 
+decouples the network control 
+from underlying hardware, 
+enabling 
+software-defined 
+management of wide-area 
+network traffic. It provides 
+a centralized orchestration 
+layer that dynamically routes 
+traffic over multiple transport 
+links (MPLS, broadband, LTE, 
+etc.) based on application 
+type, network conditions, and 
+business policies.  SD-WAN also enhances security with integrated firewalls, encryption, and segmentation capabilities 
+tailored for cloud and on-premises resources.Enterprises commonly deploy SD-WAN to support cloud adoption, branch office modernization, and 
+digital transformation initiatives. By abstracting the network infrastructure, SD-WAN allows IT teams 
+to centrally enforce policies and gain end-to-end visibility and control across all enterprise locations.
+</p>
+ 
+<h2>3. Intent-Based Networking</h2>
+ 
+<p>
+    Intent-Based Networking (IBN) is an emerging paradigm that uses high-level business-driven intent 
+to automatically design, implement, and monitor networks. IBN leverages advanced automation, 
+artificial intelligence (AI), and analytics to translate enterprise intent such as security compliance, 
+application performance, or user experience requirements into network configurations without 
+manual coding.
+IBN continuously assesses network state against the intended policies and takes corrective actions 
+proactively to ensure alignment. By combining AI-driven insights with policy-based network 
+orchestration, intent-based networks enable enterprises to achieve greater operational agility, 
+security enforcement at scale, and simplified network management.
+</p>
+ 
+<h2>Conclusion</h2>
+ 
+Cloud-managed networking, SD-WAN, and intent-based networking represent a continuum of 
+enterprise network modernization. Cloud-managed networks provide foundational agility and 
+visibility. SD-WAN delivers flexible, secure, and cost-effective WAN connectivity optimized for cloud
+first architectures. Intent-based networking applies AI-powered automation and policy-driven 
+controls to ensure networks continuously meet evolving business needs.
+<hr style="margin: 60px 0; border-top: 2px dashed #ccc;">
+
+<h1 class="article-title">
+  The Double-Edged Sword of AI in Cybersecurity<br>
+  <span style="font-size: 18px; font-weight: normal; color:#444;">
+    Balancing the promise of smarter defence with the risks of AI-powered attacks
+  </span>
+</h1>
+
+<div class="author-card">
+  <div class="author-image">
+    <img src="/Images/FacultySection/DrMetilda.jpg" alt="Dr. Metilda Florence S">
+  </div>
+  <h3 class="author-name">Dr. Metilda Florence S</h3>
+  <p class="author-designation">Associate Professor, NWC, SRMIST.</p>
+</div>
+
+<div class="article-content">
+
+  <p>
+    The existing battle between hackers and cybersecurity experts is defined by its ever-changing
+    nature, and the rise of artificial intelligence (AI) has significantly escalated the stakes in the
+    game. Firewalls and antivirus signatures once played a central role in this battle in the past;
+    however, now AI has emerged as the determining force shaping the battle.
+  </p>
+
+  <p>
+    Although organizations rapidly implement intelligent systems that can identify and mitigate
+    threats before their manifestation, cybercriminals can also exploit the capabilities of AI to
+    execute more rapid, undetectable, and convincing attacks.
+  </p>
+
+  <h2>AI for Defence: Smarter Shields Against Complex Threats</h2>
+
+  <p>
+    The traditional proactive defence model is being transformed by artificial intelligence.
+    Security teams can no longer rely solely on reactive approaches because threats evolve too
+    quickly in the digital age. Next-generation models analyse years’ worth of threat intelligence,
+    user activity, and network logs to identify suspicious behaviour before damage occurs.
+  </p>
+
+  <p>
+    A prime example of this is AI-powered intrusion detection, which can predict ransomware
+    attacks by recognizing early indicators in traffic flows.
+  </p>
+
+  <ol>
+    <li><strong>Scale and Speed:</strong> AI systems can detect and respond to threats in seconds.</li>
+    <li><strong>Enhanced Accuracy:</strong> Differentiates real threats from benign anomalies.</li>
+    <li><strong>Autonomous Response:</strong> Automatically isolates compromised systems.</li>
+  </ol>
+
+  <p>
+    In 2023, a major European financial institution deployed AI-based fraud detection that
+    identified unusual login attempts across thousands of accounts, preventing losses worth
+    millions of euros in real time.
+  </p>
+
+  <h2>AI for Offense: A Smarter, Darker Playground for Hackers</h2>
+
+  <p>
+    Unfortunately, attackers are just as eager to harness AI—sometimes even faster than
+    defenders. AI has dramatically changed the cybercriminal playbook:
+  </p>
+
+  <ul>
+    <li><strong>Hyper-Personalized Phishing:</strong> AI-crafted messages tailored to individuals.</li>
+    <li><strong>Adaptive Malware:</strong> Self-learning malware that evades detection.</li>
+    <li><strong>Deepfake Manipulation:</strong> Voice and video impersonation of executives.</li>
+  </ul>
+
+  <p>
+    In 2024, fraudsters used a deepfake video call of a company’s CFO to trick an employee into
+    transferring $25 million. Even trained staff failed to detect the deception.
+  </p>
+
+  <h2>Walking the Tightrope: Defence vs. Offense</h2>
+
+  <p>
+    The dual nature of AI presents a difficult balance. The same technology strengthening
+    cybersecurity also empowers attackers. Organizations must adopt AI responsibly while
+    continuously updating defences to match evolving threats.
+  </p>
+
+  <p>
+    Human awareness remains critical. Many attacks still exploit trust, curiosity, or error.
+    Cybersecurity strategies must therefore combine AI-driven automation with training,
+    ethical oversight, and human vigilance.
+  </p>
+
+  <h2>Conclusion</h2>
+
+  <p>
+    As AI becomes deeply integrated into cybersecurity, the future may involve AI-vs-AI warfare,
+    where defensive systems counter offensive algorithms in real time. AI itself is neither good
+    nor bad—it is simply a tool. Its impact depends entirely on how it is used.
+  </p>
+
+</div>
+ 
+
+ 
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

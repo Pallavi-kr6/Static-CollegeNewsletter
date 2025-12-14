@@ -11,6 +11,89 @@
    <link rel="stylesheet" href="/css/FacultySection/phd.css">
 
   <style>
+    * {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f6fbff, #eef6ff);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px 60px;
+}
+
+/* HEADINGS */
+.subtitle {
+  color: #2c3e99;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.title {
+  color: #243a8f;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+/* CARDS */
+.card {
+  border-radius: 18px;
+  padding: 22px 26px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.peach { background: #ffd6cc; }
+.yellow { background: #fff0c4; }
+.green { background: #dff2d8; }
+.teal  { background: #d6f0ea; }
+.blue  { background: #d9efff; }
+
+/* TEXT */
+.name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #c62828;
+  margin-bottom: 8px;
+}
+
+.name span {
+  display: inline;
+}
+
+.reg {
+  font-weight: 600;
+  color: #444;
+}
+
+.desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #222;
+  text-align: justify;
+}
+
+.desc strong {
+  font-weight: 700;
+}
+
+/* FOOTER */
+.congrats {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #9c6b2f;
+}
+
     /* === Navbar dropdowns === */
     .navbar-custom {
       background-color: #0d1b2a;
@@ -134,7 +217,7 @@
 <body>
 
 <!-- ✅ NAVBAR (UNCHANGED) -->
-<nav class="navbar navbar-expand-lg navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold" href="/">NWC Newsletter</a>
 
@@ -145,28 +228,31 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
 
+        <!-- Research -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="researchDropdown">Research</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/research-articles">Research Articles</a></li>
-            <li><a class="dropdown-item" href="/research-orations">Research Oration</a></li>
-            <li><a class="dropdown-item" href="/research">Funded Research Projects</a></li>
+            <li><a class="dropdown-item" href="/views/research/articles.html">Research Articles</a></li>
+            <li><a class="dropdown-item" href="/views/research/researchOration.html">Research Oration</a></li>
+            <li><a class="dropdown-item" href="/views/research/fundedprojects.html">Funded Research Projects</a></li>
           </ul>
         </li>
 
+        <!-- Faculty -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown">Faculty</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/FacultyArticle">FacultyArticle</a></li>
-            <li><a class="dropdown-item" href="/phdscholars">Ph.D. Powerhouse</a></li>
-            <li><a class="dropdown-item" href="/facultyOnBoard">New On Board</a></li>
-            <li><a class="dropdown-item" href="/facultyUpskilling">Faculty Upskilling</a></li>
-            <li><a class="dropdown-item" href="/faculty-achievements">Faculty Achievements</a></li>
-            <li><a class="dropdown-item" href="/consultancy">Faculty Consultancy</a></li>
-            <li><a class="dropdown-item" href="/visitors">Visitors</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/Article.html">FacultyArticle</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/pdhPowerhouse.html">Ph.D. Powerhouse</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyOnBoard.html">New On Board</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/upskilling.html">Faculty Upskilling</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyAchievement.html">Faculty Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/Consultancy.html">Faculty Consultancy</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/visitors.html">Visitors</a></li>
           </ul>
         </li>
 
+        <!-- Events -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown">Events</a>
           <ul class="dropdown-menu">
@@ -177,13 +263,14 @@
           </ul>
         </li>
 
+        <!-- Students -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown">Students</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/students/placement-highlights">Placements</a></li>
-            <li><a class="dropdown-item" href="/students/achievements">Student's Achievements</a></li>
-            <li><a class="dropdown-item" href="/students/activities">Student's Activities</a></li>
-            <li><a class="dropdown-item" href="/students/articles">Student's Articles</a></li>
+            <li><a class="dropdown-item" href="/views/students/placements.html">Placements</a></li>
+            <li><a class="dropdown-item" href="/views/students/achievements.html">Student's Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/students/activities.html">Student's Activities</a></li>
+            <li><a class="dropdown-item" href="/views/students/articles.html">Student's Articles</a></li>
           </ul>
         </li>
 
