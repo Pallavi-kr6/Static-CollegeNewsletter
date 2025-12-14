@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop – Applications of Machine Learning in Chemical Process Outcomes Prediction</title>
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+ 
+    /* === Navbar dropdowns (UNCHANGED) === */
+    .navbar-custom {
+      background-color: #0d1b2a;
+    }
+
+    .navbar-custom .nav-link,
+    .navbar-custom .navbar-brand {
+      color: #f0f0f0;
+    }
+
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .navbar-brand:hover {
+      color: #ffcc00;
+    }
+
+    .navbar-custom .dropdown-menu {
+      background-color: #0d1b2a;
+      border: none;
+      border-radius: 6px;
+      margin-top: 0.25rem;
+      left: 0;
+      right: auto;
+      top: 100%;
+      min-width: 220px;
+    }
+
+    .navbar-custom .dropdown-item {
+      color: #f0f0f0;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      margin: 2px 4px;
+    }
+
+    .navbar-custom .dropdown-item:hover {
+      background-color: rgba(255, 204, 0, 0.2);
+      color: #ffcc00;
+      transform: scale(1.03);
+    }
+
+    .navbar-custom .nav-item.dropdown {
+      position: relative;
+    }
+
+    #studentsDropdown + .dropdown-menu {
+      left: -100px;
+      right: auto;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    /* Prevent content hiding under navbar */
+    body {
+      margin-top: 70px;
+    }
+ 
+
+    :root {
+      --primary: #184b9b;
+      --accent: #6a1b6b;
+      --bg-soft: #f4f7fb;
+      --border-soft: #e2e4f0;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg-soft);
+      color: #1f2937;
+    }
+
+    header {
+      background: white;
+      padding: 18px 26px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+    }
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .info-box {
+      background: #f9fafb;
+      border: 1px solid var(--border-soft);
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+    }
+
+    .info-box strong {
+      color: #111827;
+    }
+
+    h3 {
+      margin-top: 32px;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+      font-size: 0.9rem;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .images img {
+      width: 70%;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      object-fit: cover;
+    }
+
+    .summary {
+      margin-top: 20px;
+      background: #f8fafc;
+      border-left: 5px solid var(--primary);
+      padding: 18px 20px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+.summary {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 16px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="/views/index.html">NWC Newsletter</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Research -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="researchDropdown">Research</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/research/articles.html">Research Articles</a></li>
+            <li><a class="dropdown-item" href="/views/research/researchOration.html">Research Oration</a></li>
+            <li><a class="dropdown-item" href="/views/research/fundedprojects.html">Funded Research Projects</a></li>
+          </ul>
+        </li>
+
+        <!-- Faculty -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown">Faculty</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/faculty/Article.html">FacultyArticle</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/pdhPowerhouse.html">Ph.D. Powerhouse</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyOnBoard.html">New On Board</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/upskilling.html">Faculty Upskilling</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyAchievement.html">Faculty Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/Consultancy.html">Faculty Consultancy</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/visitors.html">Visitors</a></li>
+          </ul>
+        </li>
+
+        <!-- Events -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown">Events</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/Events/GuestLecture.html">Guest Lecture</a></li>
+            <li><a class="dropdown-item" href="/views/Events/Workshop.html">Workshop</a></li>
+            <li><a class="dropdown-item" href="/views/Events/AlumniActivities.html">Alumni Activities</a></li>
+            <li><a class="dropdown-item" href="/views/Events/OutReach.html">Outreach Activities</a></li>
+          </ul>
+        </li>
+
+        <!-- Students -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown">Students</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/students/placements.html">Placements</a></li>
+            <li><a class="dropdown-item" href="/views/students/achievements.html">Student's Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/students/activities.html">Student's Activities</a></li>
+            <li><a class="dropdown-item" href="/views/students/articles.html">Student's Articles</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header>
+  Workshop Details
+</header>
+
+<div class="container">
+
+  <div class="title">
+    Applications of Machine Learning in Chemical Process Outcomes Prediction
+  </div>
+
+  <div class="subtitle">
+    Five-Day Training Programme | July 2025
+  </div>
+
+  <div class="info-grid">
+    <div class="info-box"><strong>Date:</strong> 07.07.2025 – 11.07.2025</div>
+    <div class="info-box"><strong>Time:</strong> 9:30 AM – 4:00 PM</div>
+    <div class="info-box"><strong>Venue:</strong> TP404 – Smart Class Room</div>
+    <div class="info-box"><strong>Registered Participants:</strong> 54</div>
+  </div>
+
+  <h3>Convener</h3>
+  <ul>
+    <li><strong>Dr. Jeyalakshmi R</strong>, Professor, Department of Chemistry, SRMIST</li>
+  </ul>
+
+  <h3>Co-Conveners</h3>
+  <ul>
+    <li>Dr. V. Sudha, Associate Professor, Department of Chemistry, SRMIST</li>
+    <li>Dr. V. Rajaram, Associate Professor, NWC, SRMIST</li>
+  </ul>
+
+  <h3>Resource Persons</h3>
+  <ul>
+    <li>Prof. Dr. Deva Priyakumar, IIIT Hyderabad</li>
+    <li>Dr. Tarak Patra, IIT Madras</li>
+    <li>Dr. Mudit Dixit, CSIR–CLRI, Chennai</li>
+    <li>Ms. Urmila Kishore, Exafluence Pvt. Ltd., Chennai</li>
+    <li>Dr. Abhinav S. Raman, IIT Madras</li>
+    <li>Ms. Subashree P, Saint-Gobain, India</li>
+    <li>Dr. K. B. Sundhara Kumar, Shiv Nadar University, Chennai</li>
+    <li>Dr. Anitha R, SVCE, Sriperumbudur</li>
+    <li>Dr. Shobana Devi A, SRMIST</li>
+    <li>Dr. P. Vijayakumar, SRMIST</li>
+    <li>Dr. D. Hemavathi, SRMIST</li>
+    <li>Dr. Srividhya S, SRMIST</li>
+    <li>Dr. C. Sherin Shibi, SRMIST</li>
+  </ul>
+
+  <h3>Workshop Highlights</h3>
+  <div class="images">
+    <img src="/Images/EventsSection/w2.jpg" alt="Workshop Session 1">
+    <img src="/Images/EventsSection/workshop1.jpg" alt="Hands-on Training Session">
+   
+  </div>
+
+  <h3>Event Summary</h3>
+  <div class="summary">
+    The five-day training program successfully provided participants with an in-depth understanding
+    of machine learning applications in chemical process optimization. Faculty members, research
+    scholars, and postgraduate students gained practical exposure to data-driven modeling,
+    predictive analytics, and computational techniques applicable to chemical processes, materials
+    research, and environmental analysis.
+    <br><br>
+    The interdisciplinary approach enabled participants to integrate machine learning with
+    traditional chemical engineering methods, enhancing analytical and problem-solving skills.
+    Through hands-on sessions, discussions, and collaborative exercises, attendees learned to
+    design, implement, and evaluate predictive models for real-world chemical processes.
+    Overall, the program fostered research interest, encouraged innovation, and equipped participants
+    with industry-relevant machine learning skills.
+  </div>
+
+</div>
+<div class="container">
+
+  <div class="title">
+    Diving Deep into the Next Generation Intelligent Transportation Systems
+  </div>
+
+  <div class="subtitle">
+    Six-Day Training Programme | July 2025
+  </div>
+
+  <div class="info-grid">
+    <div class="info-box"><strong>Date:</strong> 21.07.2025 – 26.07.2025</div>
+    <div class="info-box"><strong>Time:</strong> 9:30 AM – 4:30 PM</div>
+    <div class="info-box"><strong>Venue:</strong> TP 404 – 405</div>
+    <div class="info-box"><strong>Registered Participants:</strong> 52</div>
+  </div>
+
+  <h3>Conveners</h3>
+  <ul>
+    <li>Dr. S. Murugaanandam, Associate Professor, NWC</li>
+    <li>Dr. A. Prabhu Chakkaravarthy, Assistant Professor, NWC</li>
+    <li>Dr. P. Banu Priya, Assistant Professor, NWC</li>
+  </ul>
+
+  <h3>Co-Conveners</h3>
+  <ul>
+    <li>Dr. Venkatesh K, Associate Professor, NWC</li>
+    <li>Dr. Suresh A, Associate Professor, NWC</li>
+    <li>Dr. Krishnaraj N, Professor, NWC</li>
+  </ul>
+
+  <h3>Resource Persons</h3>
+  <ul>
+    <li>Dr. Srinivasalu Reddy, NIT Trichy</li>
+    <li>Dr. Rajkumar Soundrapandiyan, VIT – Vellore</li>
+    <li>Dr. Preeth Raguraman, IIITDM Kancheepuram</li>
+    <li>Dr. Rahul Raman, IIITDM Kancheepuram</li>
+    <li>Mr. Jeevananth, CEO, Pebbles Electronics, Coimbatore</li>
+    <li>Mr. Saravana Pandian S A, Embien Technologies India Pvt. Ltd.</li>
+  </ul>
+
+  <h3>Workshop Highlights</h3>
+  <div class="images">
+    <img src="/Images/EventsSection/w3.jpg" alt="ITS Workshop Session">
+    <img src="/Images/EventsSection/w4.jpg" alt="Hands-on ITS Demonstration">
+  </div>
+
+  <h3>Event Summary</h3>
+  <div class="summary">
+    The six-day program successfully provided participants with a thorough understanding of
+    next-generation intelligent transportation systems and the technologies driving them,
+    including artificial intelligence, Internet of Things (IoT), machine learning, and cybersecurity.
+    Participants gained practical insights into smart traffic management, autonomous vehicles,
+    V2X communication, and AI-based decision-making, strengthening both theoretical foundations
+    and hands-on competencies.
+    <br><br>
+    The sessions fostered collaboration between academia and industry, encouraging knowledge
+    exchange and innovative thinking. Key outcomes included enhanced awareness of ITS
+    frameworks, improved cybersecurity competencies, and exposure to emerging trends such as
+    emotionally intelligent vehicles. Overall, the program bridged knowledge gaps, inspired
+    participants toward research and development in transportation technologies, and equipped
+    them with skills to contribute effectively to smart, safe, and sustainable mobility solutions.
+  </div>
+
+</div>
+
+ <div class="container">
+
+  <div class="title">
+    The Rise of Blue Finance <span style="font-weight:500;">(Tamil)</span>
+  </div>
+
+  <div class="subtitle">
+    AICTE–ATAL FDP | September 2025
+  </div>
+
+  <div class="info-grid">
+    <div class="info-box"><strong>Date:</strong> 10.09.2025 – 12.09.2025</div>
+    <div class="info-box"><strong>Time:</strong> 9:30 AM – 4:00 PM</div>
+    <div class="info-box"><strong>Venue:</strong> TP404 & 405 – SRM LaTrobe, 4th Floor, Tech Park 1</div>
+    <div class="info-box"><strong>Registered Participants:</strong> 50</div>
+  </div>
+
+  <h3>Convener</h3>
+  <ul>
+    <li>
+      <strong>Dr. M. Lakshmi</strong>, Professor & Head,  
+      Department of Networking and Communications, SRMIST
+    </li>
+  </ul>
+
+  <h3>Co-Conveners</h3>
+  <ul>
+    <li>Dr. T. Preethiya, Assistant Professor, NWC</li>
+    <li>Dr. G. Abinaya, Assistant Professor, NWC</li>
+    <li>Dr. G. Ramya, Assistant Professor, NWC</li>
+  </ul>
+
+  <h3>Resource Persons</h3>
+  <ul>
+    <li>Dr. Athiyaman Balakrishnan, NCMRWF, Ministry of Earth Sciences</li>
+    <li>Dr. M. Dhanalakshmi, NCCR, Chennai</li>
+    <li>Dr. Latha Ganesan, NIOT, Chennai</li>
+    <li>Dr. A. Malarkodi, NIOT, Chennai</li>
+    <li>Dr. D. Sathianarayanan, NIOT, Chennai</li>
+    <li>Dr. M. Kailasam, ICAR–CIBA, Chennai</li>
+    <li>Dr. S. Sakthivel Murugan, NITTTR, Chennai</li>
+    <li>Dr. M. Lakshmi, SRMIST</li>
+    <li>Dr. S. Sajimol, NCCR, Chennai</li>
+    <li>Dr. V. Sobhana Devi, Madras Christian College, Chennai</li>
+  </ul>
+
+  <h3>Workshop Highlights</h3>
+  <div class="images">
+    <img src="/Images/EventsSection/w5.jpg" alt="Blue Finance FDP Session">
+    <img src="/Images/EventsSection/w6.jpg" alt="Expert Talk on Blue Economy">
+    <img src="/Images/EventsSection/w7.jpg" alt="Participant Interaction">
+    <img src="/Images/EventsSection/w8.jpg" alt="Panel Discussion">
+    <img src="/Images/EventsSection/w9.jpg" alt="Hands-on FDP Session">
+    <img src="/Images/EventsSection/w10.jpg" alt="Certificate Distribution">
+  </div>
+
+  <h3>Event Summary</h3>
+  <div class="summary">
+    The AICTE–ATAL FDP on <strong>“The Rise of Blue Finance”</strong> focused on promoting awareness
+    and interdisciplinary understanding of sustainable ocean and marine resource management.
+    Aligned with India’s <strong>Blue Economy Vision 2047</strong>, the three-day program explored the
+    integration of finance, technology, and environmental stewardship.
+    <br><br>
+    Experts from NIOT, NCCR, NCMRWF, CMFRI, and industry shared insights on digital technologies,
+    marine data analytics, climate impact assessment, and policy frameworks. Participants learned
+    how artificial intelligence, IoT, and remote sensing can enable data-driven blue economy projects
+    aligned with the United Nations Sustainable Development Goals (SDGs).
+    <br><br>
+    Through interactive sessions, case studies, and discussions, the FDP fostered collaboration
+    among academia, industry, and policymakers, encouraging innovation, entrepreneurship, and
+    sustainability in India’s coastal sectors. The event concluded with reflections from participants
+    and certificate distribution.
+  </div>
+
+</div>
+<div class="container">
+
+  <div class="title">
+    Dive into Autonomy: Five-Day Hands-On Workshop on Autonomous Underwater Vehicles
+  </div>
+
+  <div class="subtitle">
+    Five-Day Hands-On Workshop | September 2025
+  </div>
+
+  <div class="info-grid">
+    <div class="info-box"><strong>Date:</strong> 23.09.2025 – 26.09.2025</div>
+    <div class="info-box"><strong>Time:</strong> 9:30 AM – 4:00 PM</div>
+    <div class="info-box"><strong>Venue:</strong> TP404 & 405 – SRM LaTrobe, 4th Floor, Tech Park 1</div>
+    <div class="info-box"><strong>Registered Participants:</strong> 31</div>
+  </div>
+
+  <h3>Conveners</h3>
+  <ul>
+    <li>Dr. Annapurani K, Professor, NWC</li>
+    <li>Dr. C. Malathy, Professor, NWC</li>
+    <li>Dr. A. Suresh, Associate Professor, NWC</li>
+  </ul>
+
+  <h3>Co-Conveners</h3>
+  <ul>
+    <li>Dr. G. Abinaya, Assistant Professor, NWC</li>
+    <li>Dr. G. Ramya, Assistant Professor, NWC</li>
+    <li>Dr. Shanmuganathan V, Assistant Professor, NWC</li>
+  </ul>
+
+  <h3>Additional Co-Conveners</h3>
+  <ul>
+    <li>Dr. Mahalakshmi P, Assistant Professor, NWC</li>
+    <li>Dr. Manickam M, Assistant Professor, NWC</li>
+    <li>Dr. Sujatha R, Assistant Professor, NWC</li>
+  </ul>
+
+  <h3>Resource Persons</h3>
+  <ul>
+    <li>Dr. Sakthivel Murugan Santhanam, Professor, NITTTR, Chennai</li>
+    <li>Dr. S. B. Pranesh, Scientist-F, NIOT (Ministry of Earth Sciences), Chennai</li>
+    <li>Mr. Yashwanth Chityala, Senior Robotics Design Engineer, Trio Tech Design Pvt. Ltd., Chennai</li>
+    <li>Mr. E. Raja, CEO, Thynkloop, Chennai</li>
+    <li>Mr. Vignesh Karthikeyan & Team, Product Development & Design Engineer, Planys Technologies, Chennai</li>
+    <li>Dr. Radhakrishna Sanka, Oceanautics Pvt. Ltd., Visakhapatnam</li>
+    <li>Dr. Harikrishnan C. S., Scientist-E, C-DAC, Trivandrum</li>
+    <li>Mr. Sundar Ranganathan, Scientist-E, Ocean Observation Systems, NIOT, Chennai</li>
+    <li>Dr. R. Ramesh, Scientist-F & Deputy Project Director, Deep Ocean Human Submersible MATSYA-6000, NIOT, Chennai</li>
+  </ul>
+
+  <h3>Workshop Highlights</h3>
+  <div class="images">
+    <img src="/Images/EventsSection/w11.jpg" alt="AUV Workshop Session">
+    <img src="/Images/EventsSection/w12.jpg" alt="Hands-on AUV Design">
+    <img src="/Images/EventsSection/w13.jpg" alt="Sensor Integration Session">
+    <img src="/Images/EventsSection/w14.jpg" alt="ROS and Gazebo Simulation">
+    <img src="/Images/EventsSection/w15.jpg" alt="Industry Expert Interaction">
+    <img src="/Images/EventsSection/w16.jpg" alt="Project Pitching and Certification">
+  </div>
+
+  <h3>Event Summary</h3>
+  <div class="summary">
+    The five-day hands-on workshop provided participants with an in-depth understanding of
+    <strong>Autonomous Underwater Vehicles (AUVs)</strong>, integrating theoretical concepts with
+    practical exposure in underwater robotics. Participants explored AUV architecture, propulsion
+    systems, navigation techniques, embedded intelligence, control strategies, and underwater
+    communication systems.
+    <br><br>
+    Expert sessions delivered by academicians, scientists, and industry professionals from NITTTR,
+    NIOT, C-DAC, Planys Technologies, Trio Tech Design, Thynkloop, and Oceanautics Pvt. Ltd. enriched
+    the learning experience with real-world insights into marine robotics and deep-sea exploration.
+    Hands-on sessions enabled participants to design AUV prototypes, integrate sensors, and simulate
+    thruster control using ROS, Gazebo, and MOOS-IvP.
+    <br><br>
+    The workshop fostered collaboration among students, researchers, and industry professionals and
+    concluded with project pitching, expert feedback, and certificate distribution—celebrating
+    innovation, research curiosity, and technical excellence in underwater autonomy.
+  </div>
+
+</div>
+
+
+</body>
+</html>

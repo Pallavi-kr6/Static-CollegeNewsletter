@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Activities</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    
+  
+    /* === Navbar dropdowns (UNCHANGED) === */
+    .navbar-custom {
+      background-color: #0d1b2a;
+    }
+
+    .navbar-custom .nav-link,
+    .navbar-custom .navbar-brand {
+      color: #f0f0f0;
+    }
+
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .navbar-brand:hover {
+      color: #ffcc00;
+    }
+
+    .navbar-custom .dropdown-menu {
+      background-color: #0d1b2a;
+      border: none;
+      border-radius: 6px;
+      margin-top: 0.25rem;
+      left: 0;
+      right: auto;
+      top: 100%;
+      min-width: 220px;
+    }
+
+    .navbar-custom .dropdown-item {
+      color: #f0f0f0;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      margin: 2px 4px;
+    }
+
+    .navbar-custom .dropdown-item:hover {
+      background-color: rgba(255, 204, 0, 0.2);
+      color: #ffcc00;
+      transform: scale(1.03);
+    }
+
+    .navbar-custom .nav-item.dropdown {
+      position: relative;
+    }
+
+    #studentsDropdown + .dropdown-menu {
+      left: -100px;
+      right: auto;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    /* Prevent content hiding under navbar */
+    body {
+      margin-top: 70px;
+    }
+   
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a73e8;
+      margin-bottom: 20px;
+    }
+
+    .event-details {
+         text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .event-details div {
+      flex: 1 1 200px;
+      background: #e8f0fe;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .section h2 {
+      color: #1a73e8;
+      border-bottom: 2px solid #1a73e8;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 2px solid #ddd;
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      .event-details {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container-fluid">
+       <a class="navbar-brand fw-bold" href="/views/index.html">NWC Newsletter</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Research -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="researchDropdown">Research</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/research/articles.html">Research Articles</a></li>
+            <li><a class="dropdown-item" href="/views/research/researchOration.html">Research Oration</a></li>
+            <li><a class="dropdown-item" href="/views/research/fundedprojects.html">Funded Research Projects</a></li>
+          </ul>
+        </li>
+
+        <!-- Faculty -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown">Faculty</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/faculty/Article.html">FacultyArticle</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/pdhPowerhouse.html">Ph.D. Powerhouse</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyOnBoard.html">New On Board</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/upskilling.html">Faculty Upskilling</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyAchievement.html">Faculty Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/Consultancy.html">Faculty Consultancy</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/visitors.html">Visitors</a></li>
+          </ul>
+        </li>
+
+        <!-- Events -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown">Events</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/Events/GuestLecture.html">Guest Lecture</a></li>
+            <li><a class="dropdown-item" href="/views/Events/Workshop.html">Workshop</a></li>
+            <li><a class="dropdown-item" href="/views/Events/AlumniActivities.html">Alumni Activities</a></li>
+            <li><a class="dropdown-item" href="/views/Events/OutReach.html">Outreach Activities</a></li>
+          </ul>
+        </li>
+
+        <!-- Students -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown">Students</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/students/placements.html">Placements</a></li>
+            <li><a class="dropdown-item" href="/views/students/achievements.html">Student's Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/students/activities.html">Student's Activities</a></li>
+            <li><a class="dropdown-item" href="/views/students/articles.html">Student's Articles</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+    <h1>Alumni Activities</h1>
+
+    <!-- First Article -->
+    <div class="section">
+      <h2>Emerging Technologies</h2>
+      <div class="event-details">
+        <div><strong>Date:</strong> 25.07.2025</div>
+        <div><strong>Time:</strong> 10:30 AM</div>
+        <div><strong>Venue:</strong> MS-Teams</div>
+        <div><strong>No. of Participants:</strong> 45</div>
+        <div><strong>Resource Person:</strong> <br>Mr. Jayant Pathak<br> (B.Tech IT-2020–2024),<br>  Information Security Analyst</div>
+        <div><strong>Convener:</strong><br> Dr. Venkatesh K,<br> Dr. Nimala K, <br>Dr. Godwin Ponsam J, <br>
+            Dr. V. Joseph Raymond,<br> Dr. D. Saveetha, <br>Dr. N. Prasath</div>
+      </div>
+
+      <div class="image-container">
+        <img src="/Images/EventsSection/A1.jpg" alt="Emerging Technologies Event Image">
+      </div>
+
+      <div>
+        <h3>Event Summary</h3>
+        <p>The event explored how powerful technologies will impact industries, creating new job opportunities, solving real-world problems, driving sustainability, and enabling smart living.</p>
+      </div>
+
+      <div>
+        <h3>Event Outcome</h3>
+        <p>The session provided valuable insights to participants from II, III, and IV year on how next-generation technologies are transforming industries and society. The event emphasized the role of AI, IoT, Blockchain, 5G, VR/AR, and Quantum Computing in solving real-world problems, driving sustainability, and enabling smart living. Students gained a clear understanding of why these technologies are crucial in the modern world and how they are shaping new job opportunities and innovation landscapes.</p>
+        <p>The speaker encouraged participants to explore, research, and develop creative ideas using these technologies, fostering curiosity and forward-thinking. Overall, the outcome was an enhanced awareness of emerging technologies and their practical applications, inspiring students to prepare for future industry needs.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Second Article -->
+    <div class="section">
+      <h2>Importance of Cyber Security</h2>
+      <div class="event-details">
+        <div><strong>Date:</strong> 22.08.2025</div>
+        <div><strong>Time:</strong> 2:30 to 4:00 PM</div>
+        <div><strong>Venue:</strong> TP 404/405</div>
+        <div><strong>No. of Participants:</strong> 65</div>
+        <div><strong>Resource Person:</strong><br> Mr. Akash Periyasamy,  <br>Cyber Forensic Analyst,<br>Kriyavan Cyber Forensics, India</div>
+        <div><strong>Convener:</strong><br> Dr. Venkatesh K,<br> Dr. Nimala K,<br> Dr. Godwin Ponsam J,<br>
+             Dr. V. Joseph Raymond,<br> Dr. D. Saveetha, <br>Dr. N. Prasath</div>
+      </div>
+
+      <div class="image-container">
+        <img src="/Images/EventsSection/A2.jpg" alt="Cyber Security Event Image">
+      </div>
+
+      <div>
+        <h3>Event Outcome</h3>
+        <p>The session enabled participants from II and III Year to gain a comprehensive understanding of why cybersecurity is critical in today’s digital era. The event highlighted how effective security safeguards personal and professional data from hackers, thereby preventing financial loss, identity theft, and data misuse.</p>
+        <p>Students learned how cybersecurity fosters trust in online banking, e-commerce, and digital communication, while ensuring safe interactions in an increasingly connected world. The speaker shared practical use cases from digital forensics and introduced tools for protecting computers and information systems. The outcome was a deeper awareness that cybersecurity is not just a technical defense but a shared responsibility vital for building a secure digital society.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Third Article -->
+    <div class="section">
+      <h2>Tips and Tricks for Career Guidance</h2>
+      <div class="event-details">
+        <div><strong>Date:</strong> 12.09.2025</div>
+        <div><strong>Time:</strong> 11:00 AM</div>
+        <div><strong>Venue:</strong> Online Mode</div>
+        <div><strong>No. of Participants:</strong> 40</div>
+        <div><strong>Resource Person:</strong><br> Mr. Sabyasachi Sharma,Lead Specialist at CAMS<br>
+             Ms. Rachana Kumari,  SOC Engineer at Yext India Pvt Ltd<br>Ms. Anbuselvi D,  Associate Director at Perfios<br>
+              Manirathnam Nandhakumar,  Senior Engineer, Digital Dubai Authority</div>
+        <div><strong>Convener:</strong><br> Dr. Venkatesh K,<br> Dr. Nimala K, <br>Dr. Godwin Ponsam J,<br> Dr. V. Joseph Raymond,<br>
+             Dr. D. Saveetha,<br> Dr. N. Prasath</div>
+      </div>
+
+      <div class="image-container">
+        <img src="/Images/EventsSection/A3.jpg" alt="Career Guidance Event Image">
+      </div>
+
+      <div>
+        <h3>Event Outcome</h3>
+        <p>The alumni talk offered an enriching session that empowered students to plan and shape successful career paths with confidence. The speakers shared their professional journeys, highlighting real-world challenges, industry expectations, and the importance of continuous learning.</p>
+        <p>Through interactive discussions, participants gained practical strategies for setting achievable goals, developing effective communication and interpersonal skills, and building strong professional networks. The session also emphasized aligning individual strengths with emerging opportunities in diverse fields. Overall, the event inspired students to take proactive steps toward career growth and provided them with valuable insights for navigating their professional journey successfully.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Fourth Article -->
+    <div class="section">
+      <h2>Breaking Barriers: A Journey of Excellence in Defence and Strategy</h2>
+      <div class="event-details">
+        <div><strong>Date:</strong> 16.09.2025</div>
+        <div><strong>Time:</strong> 10:00 AM to 11:00 AM</div>
+        <div><strong>Venue:</strong> Cisco Lab, NWC</div>
+        <div><strong>No. of Participants:</strong> 50</div>
+        <div><strong>Resource Person:</strong><br> Maj. Vaishnavi Srivastava, <br>Major General at Indian Army, B.Tech (2013-2017)</div>
+        <div><strong>Convener:</strong><br> Dr. Venkatesh K, <br>Dr. Nimala K,<br> Dr. Godwin Ponsam J,<br>Dr. V. Joseph Raymond, <br>
+            Dr. D. Saveetha,<br> Dr. N. Prasath</div>
+      </div>
+
+      <div class="image-container">
+        <img src="/Images/EventsSection/A4.jpg" alt="Defence Event Image 1">
+        <img src="/Images/EventsSection/A5.jpg" alt="Defence Event Image 2">
+        <img src="/Images/EventsSection/A6.jpg" alt="Defence Event Image 3">
+      </div>
+
+      <div>
+        <h3>Event Outcome</h3>
+        <p>The alumni talk showcased the inspiring journey of an accomplished alumna who made remarkable strides in defence management and strategic studies. She shared her personal experiences of overcoming challenges, pursuing excellence in rigorous military training, and earning top distinctions in national-level courses.</p>
+        <p>The session provided valuable insights into leadership, discipline, resilience, and the importance of determination in achieving success. Students were motivated by her journey of dedication and patriotism, which demonstrated how passion and perseverance can break boundaries and pave the way for excellence in both professional and personal growth.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

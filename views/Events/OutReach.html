@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outreach Activities</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+<style>
+    
+ 
+    /* === Navbar dropdowns (UNCHANGED) === */
+    .navbar-custom {
+      background-color: #0d1b2a;
+    }
+
+    .navbar-custom .nav-link,
+    .navbar-custom .navbar-brand {
+      color: #f0f0f0;
+    }
+
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .navbar-brand:hover {
+      color: #ffcc00;
+    }
+
+    .navbar-custom .dropdown-menu {
+      background-color: #0d1b2a;
+      border: none;
+      border-radius: 6px;
+      margin-top: 0.25rem;
+      left: 0;
+      right: auto;
+      top: 100%;
+      min-width: 220px;
+    }
+
+    .navbar-custom .dropdown-item {
+      color: #f0f0f0;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      margin: 2px 4px;
+    }
+
+    .navbar-custom .dropdown-item:hover {
+      background-color: rgba(255, 204, 0, 0.2);
+      color: #ffcc00;
+      transform: scale(1.03);
+    }
+
+    .navbar-custom .nav-item.dropdown {
+      position: relative;
+    }
+
+    #studentsDropdown + .dropdown-menu {
+      left: -100px;
+      right: auto;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    /* Prevent content hiding under navbar */
+    body {
+      margin-top: 70px;
+    }
+  
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f4f7fb, #eef2f7);
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .container {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 35px;
+    font-size: 2.3rem;
+  }
+
+  .section {
+    margin-bottom: 50px;
+  }
+
+  .section h2 {
+    color: #1a73e8;
+    border-left: 6px solid #1a73e8;
+    padding-left: 12px;
+    margin-bottom: 18px;
+    font-size: 1.6rem;
+  }
+
+  .event-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .event-details div {
+    background: #f1f5ff;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    box-shadow: inset 0 0 0 1px #e0e7ff;
+  }
+
+  .event-details strong {
+    display: block;
+    color: #0b4db8;
+    margin-bottom: 4px;
+  }
+
+  .image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .image-container img:hover {
+    transform: scale(1.03);
+  }
+
+  h3 {
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  p {
+    text-align: justify;
+    margin-bottom: 12px;
+  }
+
+  hr {
+    border: none;
+    border-top: 2px dashed #d0d7e2;
+    margin: 45px 0;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+    .section h2 {
+      font-size: 1.3rem;
+    }
+  }
+</style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="/views/index.html">NWC Newsletter</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Research -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="researchDropdown">Research</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/research/articles.html">Research Articles</a></li>
+            <li><a class="dropdown-item" href="/views/research/researchOration.html">Research Oration</a></li>
+            <li><a class="dropdown-item" href="/views/research/fundedprojects.html">Funded Research Projects</a></li>
+          </ul>
+        </li>
+
+        <!-- Faculty -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown">Faculty</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/faculty/Article.html">FacultyArticle</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/pdhPowerhouse.html">Ph.D. Powerhouse</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyOnBoard.html">New On Board</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/upskilling.html">Faculty Upskilling</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/FacultyAchievement.html">Faculty Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/Consultancy.html">Faculty Consultancy</a></li>
+            <li><a class="dropdown-item" href="/views/faculty/visitors.html">Visitors</a></li>
+          </ul>
+        </li>
+
+        <!-- Events -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown">Events</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/Events/GuestLecture.html">Guest Lecture</a></li>
+            <li><a class="dropdown-item" href="/views/Events/Workshop.html">Workshop</a></li>
+            <li><a class="dropdown-item" href="/views/Events/AlumniActivities.html">Alumni Activities</a></li>
+            <li><a class="dropdown-item" href="/views/Events/OutReach.html">Outreach Activities</a></li>
+          </ul>
+        </li>
+
+        <!-- Students -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="studentsDropdown">Students</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/views/students/placements.html">Placements</a></li>
+            <li><a class="dropdown-item" href="/views/students/achievements.html">Student's Achievements</a></li>
+            <li><a class="dropdown-item" href="/views/students/activities.html">Student's Activities</a></li>
+            <li><a class="dropdown-item" href="/views/students/articles.html">Student's Articles</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+    <h1>Outreach Activities</h1>
+
+    <!-- First Activity -->
+    <div class="section">
+      <h2>Farm Connect 2025</h2>
+      <div class="event-details">
+        <div><strong>Date:</strong> 29.07.2025</div>
+        <div><strong>Time:</strong> 10:00 AM – 2:30 PM</div>
+        <div><strong>Venue:</strong> Farm Science Centre (ICAR - KVK), Kattupakkam</div>
+        <div><strong>Participants:</strong> 30 Members</div>
+        <div><strong>Association:</strong> Krishi Vignan Kendra, Tamil Nadu</div>
+        <div><strong>Conveners & Co-Conveners:</strong>  Dr. Nallarasan V, <br>Dr. Praveena Akki</div>
+        <div><strong>Resource Person:</strong> Dr. Aparna,<br> Associate Scientist,<br> Tamil Nadu Veterinary and Animal Sciences University</div>
+      </div>
+
+      <div class="image-container">
+        <img src="/Images/EventsSection/o1.jpg" alt="Farm Connect Image 1">
+        <img src="/Images/EventsSection/o2.jpg" alt="Farm Connect Image 2">
+        <img src="/Images/EventsSection/o3.jpg" alt="Farm Connect Image 3">
+      </div>
+
+      <div>
+        <h3>Event Summary</h3>
+        <p>Farm Connect 2025 was a knowledge-filled journey that offered deep insights into agriculture, veterinary sciences, and the transformative role of modern technology in farming. The event highlighted integrated farming systems, sustainable agriculture practices, animal nutrition, veterinary care, and real-time demonstrations in crop management.</p>
+        <p>Sessions also showcased the use of IoT, sensors, and data-driven precision farming, along with the significant role of Computer Science in AgriTech and rural innovation. The program, facilitated by the conveners, faculty, NWC Association students, and the Farm Science Centre team, served as a perfect example of how engineering minds can contribute to sustainability, food security, and rural transformation.</p>
+        <p>The event concluded with a valedictory session and vote of thanks by the coordinators.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Second Activity -->
+    <div class="section">
+      <h2>Light Up Knowledge</h2>
+      <div class="event-details">
+        <div><strong>Date:</strong> 14.08.2025</div>
+        <div><strong>Time:</strong> 10:00 AM – 1:00 PM</div>
+        <div><strong>Venue:</strong> Panchayat Union Middle School, Ninnaikarai, Maraimalainagar</div>
+        <div><strong>Participants:</strong> 85 students</div>
+        <div><strong>Conveners:</strong>  Dr. T.R. Vedhavathy,<br> Dr. M. Mahalakshmi, <br>Dr. B. Lakshmi Dhevi</div>
+      </div>
+
+      <div class="image-container">
+        <img src="/Images/EventsSection/o4.jpg" alt="Light Up Knowledge Image 1">
+        <img src="/Images/EventsSection/o5.jpg" alt="Light Up Knowledge Image 2">
+        <img src="/Images/EventsSection/o6.jpg" alt="Light Up Knowledge Image 3">
+      </div>
+
+      <div>
+        <h3>Event Summary</h3>
+        <p>The outreach activity successfully engaged Class VII and VIII students in exploring the concepts and properties of light energy, including reflection, refraction, and dispersion, through real-time demonstrations, interactive experiments, and group discussions. Students actively participated by observing, questioning, predicting, and testing outcomes, which enhanced their understanding and bridged the gap between theory and practice.</p>
+        <p>The session nurtured curiosity, critical thinking, creativity, and problem-solving skills. Student volunteers conducted a quiz to reinforce learning, and prizes were awarded to the top performers, adding motivation and excitement. Distribution of stationary and snacks created a positive, encouraging environment. Overall, the activity deepened students’ comprehension of scientific concepts, inspired active learning, and fostered a lifelong interest and enthusiasm for science.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Third Activity -->
+    <div class="section">
+      <h2>Medical Camp: Success Story!!</h2>
+      <div class="event-details">
+        <div><strong>Date:</strong> 20.09.2025</div>
+        <div><strong>Time:</strong> 9:00 AM to 4:00 PM</div>
+        <div><strong>Venue:</strong> Shiri Sarada Sakthi Peedam Ashram, Old Perungalathur</div>
+        <div><strong>Participants:</strong> 205 Members</div>
+        <div><strong>Association:</strong> National Service Scheme and Department of Community Medicine, SRMIST</div>
+        <div><strong>Conveners:</strong>  Dr. Yamini B,<br> Dr. S. Muruganantham</div>
+        <div><strong>Co-Conveners:</strong>  Dr. Metilda Florence S, <br>Dr. Joseph Raymond V,<br> Dr. Fancy C,<br> Dr. Anand M</div>
+      </div>
+
+      <div class="image-container">
+        <img src="/Images/EventsSection/o7.jpg" alt="Medical Camp Image 1">
+        <img src="/Images/EventsSection/o8.jpg" alt="Medical Camp Image 2">
+      </div>
+
+      <div>
+        <h3>Event Summary</h3>
+        <p>The Department of Networking and Communications (NWC), in collaboration with the National Service Scheme (NSS) and the Department of Community Medicine, SRMIST, organized a Medical Camp as part of the National Health Mission’s campaign, “Healthy Women, Strong Family (Swasth Nari, Sashakt Parivar Abhiyaan).” The initiative reflected SRM’s spirit of unity, compassion, and service.</p>
+        <p>With the dedicated efforts of six NWC faculty members, twenty-two doctors from Community Medicine, NSS faculty coordinators, and seven enthusiastic student volunteers, the camp created a meaningful social impact. The outreach program benefited 105 students and 100 women, offering health awareness, consultation, and care. Special appreciation to Ms. Bharathi Devi T, Mr. Raja P, and Mr. Selva Kumar for their valuable support.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Students' Awards & Recognitions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Lecture: XAI</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    
  
     /* === Navbar dropdowns (UNCHANGED) === */
     .navbar-custom {
@@ -64,109 +71,89 @@
     /* Prevent content hiding under navbar */
     body {
       margin-top: 70px;
+    } 
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e9f0fb);
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: radial-gradient(circle at top left, #f7fbff, #eef4fa);
-  color: #222;
-}
 
-.wrapper {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 40px 50px;
-}
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px;
+    }
 
-/* Header */
-.header {
-  margin-bottom: 45px;
-}
+    h1 {
+      text-align: center;
+      color: #0d6efd;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
 
-.header small {
-  font-size: 22px;
-  font-weight: 600;
-  color: #2b3f94;
-  display: block;
-}
+    .card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.header h1 {
-  margin: 5px 0 0;
-  font-size: 46px;
-  font-weight: 800;
-  color: #2b3f94;
-}
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
 
-/* Section block */
-.section {
-  padding: 35px 0;
-  border-bottom: 2px dashed #4aa3ff;
-}
+    .event-details p, 
+    .summary p {
+      text-align: justify;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
 
-.section:last-child {
-  border-bottom: none;
-}
+    .event-details p strong {
+      color: #0d6efd;
+    }
 
-/* Image grid */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-bottom: 25px;
-}
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
 
-.image-grid.single {
-  grid-template-columns: 1fr;
-}
+    .images img {
+      width: 50%;
+      max-width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.image-grid img {
-  width: 100%;
-  border-radius: 8px;
-  border: 2px dashed #4aa3ff;
-  object-fit: cover;
-}
+    .images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
 
-/* Bullet content */
-.content-list {
-  padding-left: 22px;
-  margin: 0;
-  max-width: 900px;
-}
+    @media (max-width: 768px) {
+      .images {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
 
-.content-list li {
-  margin-bottom: 18px;
-  line-height: 1.75;
-  font-size: 16px;
-}
-
-.content-list strong {
-  font-weight: 700;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .wrapper {
-    padding: 30px 20px;
-  }
-
-  .image-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .header h1 {
-    font-size: 36px;
-  }
-}
-</style>
+  </style>
 </head>
-
 <body>
-
-<div class="wrapper">
-<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="/views/index.html">NWC Newsletter</a>
+       <a class="navbar-brand fw-bold" href="/views/index.html">NWC Newsletter</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -225,61 +212,33 @@ body {
     </div>
   </div>
 </nav>
-  <!-- HEADER -->
-  <div class="header">
-    <small>Students’</small>
-    <h1>Awards & Recognitions</h1>
-  </div>
 
-  <!-- SECTION 1 -->
-  <div class="section">
+  <div class="container">
+    <h1>Guest Lecture: XAI – Scope, Impact & Research Opportunities</h1>
 
-    <div class="image-grid">
-      <img src="../../public/images/students/achivements/attack1.jpg" alt="Attack to Defend Hackathon Winners">
-      <img src="../../public/images/students/achivements/attack2.jpg" alt="Attack to Defend Prize Ceremony">
+    <div class="card event-details">
+      <p><strong>Date:</strong> 02.08.2025</p>
+      <p><strong>Time:</strong> 09:30 AM – 12:30 PM</p>
+      <p><strong>Venue:</strong> Dr. Ramanujan Hall, Tech Park – I (Lobby)</p>
+      <p><strong>Convener:</strong><br>Dr. M. Saravanan (Professor, NWC),<br>
+           Dr. P. Balamurugan (Associate Professor, NWC), <br>
+           Mrs. V. Vijayalakshmi (Assistant Professor, NWC)</p>
+      <p><strong>Resource Person:</strong> <br>Dr. Seshathiri Dhanasekaran, CTO & AI Research Leader, UiT The Arctic University of Norway</p>
+      <p><strong>Number of Registered Participants:</strong> 25</p>
     </div>
 
-    <ul class="content-list">
-      <li>
-        <strong>KASHYAPA IVATURI (RA2112703010002)</strong>, 9th Semester M.Tech Integrated in Cyber
-        Security and Digital Forensics, participated in Attack to Defend, Hackathon 2025 held at
-        SRMIST, Kattankulathur on 20th–21st August 2025 and secured the First Prize and his team
-        received a cash prize of Rs. 1,20,000/-.
-      </li>
-
-      <li>
-        <strong>Chiranjeevi Sai Kapuluru</strong>, 7th Semester M.Tech Integrated in Cyber Security
-        and Digital Forensics, participated in Attack to Defend, Hackathon 2025 held at SRMIST,
-        Kattankulathur on 20th–21st August 2025 and secured the First Prize and his team received a
-        cash prize of Rs. 1,20,000/-.
-      </li>
-
-      <li>
-        <strong>SHAURYA BHATNAGAR (RA2311029010043)</strong>, 4th Semester B.Tech CSE (Computer
-        Networking), won First Prize (Solo Singing) in Euphoria–2025 (Inter-Hostel Competition)
-        held at SRMIST, Kattankulathur from January to May 2025.
-      </li>
-    </ul>
-
-  </div>
-
-  <!-- SECTION 2 -->
-  <div class="section">
-
-    <div class="image-grid single">
-      <img src="../../public/images/students/achivements/pahani.jpg" alt="Entrepreneurship 101 Winners">
+    <div class="images">
+      <img src="/Images/EventsSection/G1.jpg" alt="Guest Lecture Image 1">
+      <img src="/Images/EventsSection/G2.jpg" alt="Guest Lecture Image 2">
     </div>
 
-    <ul class="content-list">
-      <li>
-        <strong>AAHONA PHANI (RA2311030010212)</strong>, 5th Semester Cyber Security, won First Prize
-        in Entrepreneurship 101 held at SRMIST, Kattankulathur on 20th August 2025.
-      </li>
-    </ul>
-
+    <div class="card summary">
+      <p>The guest lecture successfully provided participants with a comprehensive understanding of the scope, impact, and research opportunities in Explainable AI (XAI). Scholars and faculty gained insights into how XAI can enhance transparency, interpretability, and accountability in AI systems, addressing challenges in decision-making and ethical considerations.</p>
+      
+      <p>The session inspired attendees to explore innovative research directions, interdisciplinary collaborations, and practical applications of XAI in real-world scenarios. By highlighting emerging trends and open research questions, the event motivated participants to engage in critical thinking, experimentation, and knowledge-sharing.</p>
+      
+      <p>Overall, the outcome was heightened awareness of the importance of explainable AI, strengthened research curiosity, and encouragement to pursue impactful projects, fostering both academic growth and global scientific collaboration.</p>
+    </div>
   </div>
-
-</div>
-
 </body>
 </html>
